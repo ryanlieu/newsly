@@ -1,1 +1,1 @@
-web: gunicorn -b 0.0.0.0:$PORT backendSummarization:app
+web: export FLASK_APP=backendSummarization.py flask run
