@@ -1,3 +1,4 @@
+import os
 import nltk
 import string
 import networkx
@@ -88,5 +89,10 @@ def show_post(post_url):
     url = post_url
     sumText = getArticleTitleText(url)
     return extractSentences(sumText[1], 3)
+
+if __name__ == '__main__':
+	port = int(os.environ.get("PORT", 5000))
+	app.run(host='0.0.0.0', port=port)
+
 
 

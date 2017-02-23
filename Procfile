@@ -1,1 +1,1 @@
-web: export FLASK_APP=backendSummarization.py flask run
+web: python backendSummarization.py
