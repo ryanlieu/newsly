@@ -73,14 +73,14 @@ def getArticleTitleText(url):
 	return [article.title, article.text.encode('utf-8')]
 
 
-url = 'https://hbr.org/2017/02/how-founders-can-recognize-and-combat-depression'
+#url = 'https://hbr.org/2017/02/how-founders-can-recognize-and-combat-depression'
 #print getArticleText(url)
-sumTest = getArticleTitleText(url)
-print sumTest[0]
+#sumTest = getArticleTitleText(url)
+#print sumTest[0]
 #with open('data.txt', 'r') as myfile:
 #	origText = myfile.read().replace('\n', '')
 #sumTest[1] = origText
-print extractSentences(sumTest[1], 4)
+#print extractSentences(sumTest[1], 4)
 
 @app.route('/post/<path:post_url>')
 def show_post(post_url):
