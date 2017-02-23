@@ -6,6 +6,7 @@ import httplib, urllib, base64
 from math import log10
 from newspaper import Article
 from preprocessing.textcleaner import clean_text_by_sentences
+
 from flask import Flask
 app = Flask(__name__)
 
@@ -83,13 +84,17 @@ def getArticleTitleText(url):
 #sumTest[1] = origText
 #print extractSentences(sumTest[1], 4)
 
-@app.route('/post/<path:post_url>')
+@app.route('/')
+def home():
+    """Render website's home page."""
+    return "lol"
 
+@app.route('/post/<path:post_url>')
 def show_post(post_url):
     # show the post with the given id, the id is an integer
     url = post_url
     sumText = getArticleTitleText(url)
     return extractSentences(sumText[1], 3)
-    
+
 if __name__ == '__main__':
     app.run()
