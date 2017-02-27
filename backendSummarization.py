@@ -7,9 +7,6 @@ from math import log10
 from newspaper import Article
 from preprocessing.textcleaner import clean_text_by_sentences
 
-from flask import Flask
-app = Flask(__name__)
-
 def sentSimilar(sen1, sen2):
 	sen1Words = sen1.split()
 	sen2Words = sen2.split()
@@ -74,27 +71,7 @@ def getArticleTitleText(url):
 	article.parse()
 	return [article.title, article.text.encode('utf-8')]
 
-
-#url = 'https://hbr.org/2017/02/how-founders-can-recognize-and-combat-depression'
-#print getArticleText(url)
-#sumTest = getArticleTitleText(url)
-#print sumTest[0]
 #with open('data.txt', 'r') as myfile:
 #	origText = myfile.read().replace('\n', '')
-#sumTest[1] = origText
-#print extractSentences(sumTest[1], 4)
-
-@app.route('/')
-def home():
-    """Render website's home page."""
-    return "lol"
-
-@app.route('/post/<path:post_url>')
-def show_post(post_url):
-    # show the post with the given id, the id is an integer
-    url = post_url
-    sumText = getArticleTitleText(url)
-    return extractSentences(sumText[1], 3)
-
-if __name__ == '__main__':
-    app.run()
+#sumTest = origText
+#print extractSentences(sumTest[, 3)
