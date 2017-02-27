@@ -1,1 +1,1 @@
-web: summarizationBackend.py
+web: python summarizationBackend.py
