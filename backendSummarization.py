@@ -1,11 +1,10 @@
-from urlparse import urlparse
 import os
 import nltk
 import string
 import networkx
 import httplib, urllib, base64
 from math import log10
-from newspaper import Article
+from newspaper.article import Article
 from preprocessing.textcleaner import clean_text_by_sentences
 
 def sentSimilar(sen1, sen2):
