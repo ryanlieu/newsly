@@ -1,6 +1,7 @@
 from backendSummarization import getArticleTitleText, extractSentences
 from flask import Flask
 from flask import jsonify
+import os 
 app = Flask(__name__)
 
 @app.route('/')
@@ -16,4 +17,6 @@ def show_post(numSentences, summarize_url):
     return jsonify(extractSentences(sumText[1], numSentences))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+	app.debug = True
+	port = int(os.environ.get("PORT", 5000))
+	app.run(host='0.0.0.0', port=port)
