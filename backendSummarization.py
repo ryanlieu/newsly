@@ -1,3 +1,4 @@
+from urlparse import urlparse
 import os
 import nltk
 import string
