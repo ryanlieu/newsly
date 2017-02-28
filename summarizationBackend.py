@@ -14,7 +14,7 @@ def show_post(numSentences, summarize_url):
     # show the post with the given id, the id is an integer
     url = summarize_url
     sumText = getArticleTitleText(url)
-    return jsonify(sumText[0], extractSentences(sumText[1], numSentences))
+    return jsonify(title = sumText[0], summary = extractSentences(sumText[1], numSentences))
 
 if __name__ == '__main__':
 	app.debug = True
