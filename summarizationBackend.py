@@ -7,11 +7,12 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
+@cross_origin()
 def home():
     """Render website's home page."""
     return "USAGE: /summarize/length/url"
 
-@app.route('/summarize/<int:numSentences>/<path:summarize_url>/')
+@app.route('/summarize/<int:numSentences>/<path:summarize_url>/', , methods=['GET'])
 @cross_origin()
 def show_post(numSentences, summarize_url):
     # show the post with the given id, the id is an integer
