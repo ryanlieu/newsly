@@ -12,6 +12,7 @@ def home():
     return "USAGE: /summarize/length/url"
 
 @app.route('/summarize/<int:numSentences>/<path:summarize_url>/')
+@cross_origin()
 def show_post(numSentences, summarize_url):
     # show the post with the given id, the id is an integer
     url = summarize_url
