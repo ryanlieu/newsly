@@ -1,13 +1,15 @@
 from backendSummarization import getArticleTitleText, extractSentences
 from flask import Flask
 from flask import jsonify
+from flask_cors import CORS, cross_origin
 import os 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def home():
     """Render website's home page."""
-    return "lol"
+    return "USAGE: /summarize/length/url"
 
 @app.route('/summarize/<int:numSentences>/<path:summarize_url>/')
 def show_post(numSentences, summarize_url):
