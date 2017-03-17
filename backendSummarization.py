@@ -95,7 +95,7 @@ def setGraphEdgeWeights(senGraph):
 	for sen1 in senGraph.nodes():
    		for sen2 in senGraph.nodes():
 			if sen1 != sen2 and not senGraph.has_edge(sen1, sen2):
-				similarityWeight = sentSimilar(sen1, sen2)
+				similarityWeight = sentSimilarBM25(sen1, sen2)
 				if similarityWeight != 0:
 					senGraph.add_edge(sen1, sen2, weight = similarityWeight)
 
