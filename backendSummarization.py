@@ -131,6 +131,6 @@ def getArticleTitleText(url):
 	article.parse()
 	return [article.title, article.text.encode('utf-8')]
 
-with open('data.txt', 'r') as myfile:
-	origText = myfile.read().replace('\n', ' ')
-print extractSentences(origText, 3)
+#with open('data.txt', 'r') as myfile:
+#	origText = myfile.read().replace('\n', ' ')
+#print extractSentences(origText, 3)
