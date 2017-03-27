@@ -122,7 +122,11 @@ def extractSentences(text, length):
 	pulledSentence = sentence[:int(length)]
     # most important sentences in ascending order of importance
 	pulledSentence.sort(key=lambda s: s.index)
-	return "\n".join([sen.text for sen in pulledSentence])
+	finalText = ""
+	for sen in pulledSentence:
+		finalText += sen.text
+		finalText += '\n'
+	return finalText
 
 def getArticleTitleText(url):
 	article = Article(url)
